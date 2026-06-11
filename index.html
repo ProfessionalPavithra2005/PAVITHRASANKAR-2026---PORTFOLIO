@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pavithra Sankar — UI/UX Designer Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0B1C3D;
+    --navy-mid: #112654;
+    --navy-light: #1A3470;
+    --accent: #C8A96E;
+    --accent-light: #E8D5A3;
+    --white: #FFFFFF;
+    --off-white: #F5F7FA;
+    --text-light: #D4DEF0;
+    --text-muted: #8FA3C8;
+    --border: rgba(200,169,110,0.35);
+    --font: 'Times New Roman', 'IM Fell English', Georgia, serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font);
+    background: var(--navy);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(11,28,61,0.97);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    height: 64px;
+  }
+  .nav-logo {
+    font-family: var(--font);
+    font-size: 20px;
+    font-style: italic;
+    color: var(--accent);
+    letter-spacing: 0.5px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* PAGE SECTIONS */
+  section {
+    min-height: 100vh;
+    padding: 120px 80px 80px;
+    position: relative;
+  }
+
+  /* ─── PAGE 1: HERO ─── */
+  #page1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    background: var(--navy);
+  }
+  .hero-left {}
+  .hero-tag {
+    display: inline-block;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    margin-bottom: 28px;
+  }
+  .hero-name {
+    font-family: var(--font);
+    font-size: 72px;
+    line-height: 1.05;
+    font-weight: normal;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  .hero-name span {
+    display: block;
+    color: var(--accent);
+    font-style: italic;
+  }
+  .hero-role {
+    font-size: 18px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+  }
+  .hero-bio {
+    font-size: 15px;
+    color: var(--text-light);
+    line-height: 1.9;
+    max-width: 480px;
+    margin-bottom: 40px;
+  }
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-light);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .contact-item:hover { color: var(--accent); }
+  .contact-icon {
+    width: 32px; height: 32px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+  }
+  .btn-row { display: flex; gap: 16px; }
+  .btn-primary {
+    padding: 12px 32px;
+    background: var(--accent);
+    color: var(--navy);
+    font-family: var(--font);
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--accent-light); }
+  .btn-outline {
+    padding: 12px 32px;
+    background: transparent;
+    color: var(--white);
+    font-family: var(--font);
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 1px solid rgba(255,255,255,0.3);
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* Hero right — education cards */
+  .hero-right {}
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 28px;
+  }
+  .edu-timeline { position: relative; padding-left: 24px; }
+  .edu-timeline::before {
+    content: '';
+    position: absolute; left: 0; top: 4px; bottom: 4px;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+  }
+  .edu-item {
+    position: relative;
+    margin-bottom: 32px;
+    background: var(--navy-mid);
+    border: 1px solid var(--border);
+    padding: 20px 24px;
+  }
+  .edu-item::before {
+    content: '';
+    position: absolute;
+    left: -28px; top: 20px;
+    width: 8px; height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+  .edu-year {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .edu-degree {
+    font-size: 17px;
+    font-weight: bold;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .edu-school {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+  .edu-grade {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--accent);
+    border: 1px solid var(--border);
+    padding: 2px 10px;
+  }
+
+  /* Divider */
+  .page-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--accent), transparent);
+  }
+
+  /* ─── PAGE 2: SKILLS ─── */
+  #page2 {
+    background: var(--navy-mid);
+  }
+  .page-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .page-number {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .page-title {
+    font-family: var(--font);
+    font-size: 52px;
+    font-weight: normal;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+  .page-title em { color: var(--accent); font-style: italic; }
+  .page-subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  .skill-card {
+    background: var(--navy);
+    border: 1px solid var(--border);
+    padding: 28px 24px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.2s;
+  }
+  .skill-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+  }
+  .skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+  .skill-card:hover::before { transform: scaleX(1); }
+  .skill-card-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  .skill-card-title {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .skill-tag {
+    background: rgba(200,169,110,0.12);
+    border: 1px solid rgba(200,169,110,0.3);
+    color: var(--text-light);
+    font-size: 12px;
+    padding: 4px 12px;
+    letter-spacing: 0.5px;
+  }
+  .skill-tag.featured {
+    background: var(--accent);
+    color: var(--navy);
+    border-color: var(--accent);
+    font-weight: bold;
+  }
+
+  /* proficiency bars */
+  .proficiency-section { margin-top: 48px; }
+  .prof-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 28px;
+    text-align: center;
+  }
+  .prof-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 48px;
+  }
+  .prof-item { }
+  .prof-name-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  .prof-name { font-size: 13px; color: var(--text-light); }
+  .prof-pct { font-size: 12px; color: var(--accent); font-style: italic; }
+  .prof-bar {
+    height: 2px;
+    background: rgba(255,255,255,0.1);
+    position: relative;
+  }
+  .prof-fill {
+    height: 100%;
+    background: var(--accent);
+    transition: width 1.2s ease;
+  }
+
+  /* soft skills */
+  .soft-skills-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  .soft-pill {
+    border: 1px solid var(--border);
+    color: var(--text-light);
+    font-size: 13px;
+    padding: 8px 20px;
+    letter-spacing: 1px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .soft-pill:hover {
+    background: var(--accent);
+    color: var(--navy);
+    border-color: var(--accent);
+  }
+
+  /* languages */
+  .lang-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 28px;
+  }
+  .lang-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  .lang-circle {
+    width: 56px; height: 56px;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 1px;
+  }
+  .lang-name { font-size: 11px; color: var(--text-muted); letter-spacing: 2px; text-transform: uppercase; }
+
+  /* ─── PAGE 3: PROJECTS ─── */
+  #page3 {
+    background: var(--navy);
+  }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 48px;
+  }
+  .project-card {
+    background: var(--navy-mid);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+  .project-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+  }
+  .project-preview {
+    width: 100%;
+    height: 220px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    background: var(--navy-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .project-preview iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    pointer-events: none;
+    transform: scale(0.5);
+    transform-origin: top left;
+    width: 200%;
+    height: 200%;
+  }
+  .project-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(11,28,61,0.0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .project-card:hover .project-overlay { opacity: 1; background: rgba(11,28,61,0.6); }
+  .project-overlay a {
+    padding: 10px 24px;
+    background: var(--accent);
+    color: var(--navy);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--font);
+  }
+  .project-preview-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    gap: 12px;
+  }
+  .preview-icon {
+    font-size: 48px;
+    color: var(--accent);
+  }
+  .preview-tool {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .project-body { padding: 24px; }
+  .project-year {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .project-title {
+    font-size: 20px;
+    font-style: italic;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+  .project-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .project-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .project-tool-tag {
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 3px 10px;
+  }
+  .project-link {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(200,169,110,0.4);
+    padding-bottom: 2px;
+    transition: border-color 0.2s;
+  }
+  .project-link:hover { border-color: var(--accent); }
+
+  /* ─── PAGE 4: WORK / PROFILES ─── */
+  #page4 {
+    background: var(--navy-mid);
+  }
+  .work-intro {
+    max-width: 640px;
+    margin: 0 auto 60px;
+    text-align: center;
+    font-size: 15px;
+    color: var(--text-light);
+    line-height: 1.9;
+    font-style: italic;
+  }
+  .profiles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    max-width: 900px;
+    margin: 0 auto 60px;
+  }
+  .profile-card {
+    background: var(--navy);
+    border: 1px solid var(--border);
+    padding: 32px;
+    transition: border-color 0.3s, transform 0.2s;
+  }
+  .profile-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+  }
+  .profile-platform {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .profile-handle {
+    font-size: 22px;
+    color: var(--white);
+    margin-bottom: 8px;
+    font-style: italic;
+  }
+  .profile-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .profile-link {
+    display: inline-block;
+    padding: 10px 24px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+  .profile-link:hover {
+    background: var(--accent);
+    color: var(--navy);
+  }
+
+  /* behance / youtube cards */
+  .behance-highlight {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--navy);
+    border: 1px solid var(--border);
+    padding: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+  .bh-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .bh-title {
+    font-size: 32px;
+    font-style: italic;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .bh-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+  .bh-image-block {
+    background: var(--navy-light);
+    border: 1px dashed var(--border);
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .bh-image-block p {
+    font-size: 12px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    border-top: 1px solid var(--border);
+    padding: 40px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-name {
+    font-style: italic;
+    font-size: 20px;
+    color: var(--accent);
+  }
+  .footer-right {
+    font-size: 12px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+  }
+
+  /* SCROLL ANIMATION */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 900px) {
+    section { padding: 100px 28px 60px; }
+    #page1 { grid-template-columns: 1fr; }
+    .hero-name { font-size: 48px; }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .profiles-grid { grid-template-columns: 1fr; }
+    .behance-highlight { grid-template-columns: 1fr; }
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    footer { flex-direction: column; gap: 12px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Pavithra Sankar</div>
+  <ul class="nav-links">
+    <li><a href="#page1">Profile</a></li>
+    <li><a href="#page2">Skills</a></li>
+    <li><a href="#page3">Projects</a></li>
+    <li><a href="#page4">Work & Profiles</a></li>
+  </ul>
+</nav>
+
+<!-- ══════════════════════════════════════
+     PAGE 1 — HERO + EDUCATION
+══════════════════════════════════════ -->
+<section id="page1">
+  <div class="hero-left reveal">
+    <div class="hero-tag">UI / UX Designer &nbsp;·&nbsp; MCA Student</div>
+    <h1 class="hero-name">
+      Pavithra
+      <span>Sankar</span>
+    </h1>
+    <p class="hero-role">Graphic &amp; User Experience Designer</p>
+    <p class="hero-bio">
+      A highly motivated Graphic and UI/UX Designer currently pursuing MCA at Sri Manakula Vinayagar Engineering College. Passionate about creating user-centered, visually compelling design solutions — skilled in Figma, Adobe XD, Illustrator, and JavaScript. Eager to contribute to innovative web design projects with a focus on creativity, leadership, and collaboration.
+    </p>
+    <div class="contact-row">
+      <a class="contact-item" href="mailto:pavithrasankar272005@gmail.com">
+        <span class="contact-icon">✉</span> pavithrasankar272005@gmail.com
+      </a>
+      <a class="contact-item" href="tel:+919123519298">
+        <span class="contact-icon">✆</span> +91 91235 19298
+      </a>
+    </div>
+    <div class="contact-row">
+      <a class="contact-item" href="https://www.linkedin.com/in/pavithra-sankar-b760a03a6/" target="_blank">
+        <span class="contact-icon">in</span> LinkedIn
+      </a>
+      <a class="contact-item" href="https://github.com/ProfessionalPavithra2005" target="_blank">
+        <span class="contact-icon">⌥</span> GitHub
+      </a>
+      <a class="contact-item" href="https://www.behance.net/pavithrasankar4" target="_blank">
+        <span class="contact-icon">Be</span> Behance
+      </a>
+      <a class="contact-item" href="https://www.youtube.com/@HASINFINITYPavithraSankar2025" target="_blank">
+        <span class="contact-icon">▶</span> YouTube
+      </a>
+    </div>
+    <div class="btn-row">
+      <a class="btn-primary" href="#page3">View Projects</a>
+      <a class="btn-outline" href="#page4">See Profiles</a>
+    </div>
+  </div>
+
+  <div class="hero-right reveal">
+    <p class="section-label">Academic Qualifications</p>
+    <div class="edu-timeline">
+      <div class="edu-item">
+        <p class="edu-year">2026 &mdash; Present</p>
+        <p class="edu-degree">Master of Computer Applications (MCA)</p>
+        <p class="edu-school">Sri Manakula Vinayagar Engineering College<br>Affiliated to Pondicherry University, Puducherry</p>
+        <span class="edu-grade">Currently Pursuing</span>
+      </div>
+      <div class="edu-item">
+        <p class="edu-year">2022 &mdash; 2025</p>
+        <p class="edu-degree">Bachelor of Computer Applications (BCA)</p>
+        <p class="edu-school">Idhaya College of Arts and Science for Women<br>Affiliated to Pondicherry University, Puducherry</p>
+        <span class="edu-grade">CGPA: 7.733</span>
+      </div>
+      <div class="edu-item">
+        <p class="edu-year">2022 &mdash; HSC</p>
+        <p class="edu-degree">Higher Secondary Certificate</p>
+        <p class="edu-school">New Modern Vidhya Mandhir Higher Secondary School, Puducherry</p>
+        <span class="edu-grade">81.83%</span>
+      </div>
+      <div class="edu-item">
+        <p class="edu-year">2020 &mdash; SSLC</p>
+        <p class="edu-degree">Secondary School Leaving Certificate</p>
+        <p class="edu-school">St. Patrick Matriculation Higher Secondary School, Puducherry</p>
+        <span class="edu-grade">53%</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="page-divider"></div>
+
+<!-- ══════════════════════════════════════
+     PAGE 2 — SKILLS
+══════════════════════════════════════ -->
+<section id="page2">
+  <div class="page-header reveal">
+    <p class="page-number">02 — Skill Sets</p>
+    <h2 class="page-title">Tools &amp; <em>Expertise</em></h2>
+    <p class="page-subtitle">Design · Development · Editing · Research</p>
+  </div>
+
+  <div class="skills-grid">
+    <!-- Design Software -->
+    <div class="skill-card reveal">
+      <div class="skill-card-icon">✦</div>
+      <p class="skill-card-title">Design &amp; Prototyping</p>
+      <div class="skill-tags">
+        <span class="skill-tag featured">Figma</span>
+        <span class="skill-tag featured">Adobe XD</span>
+        <span class="skill-tag featured">Illustrator</span>
+        <span class="skill-tag">Photoshop</span>
+        <span class="skill-tag">Canva</span>
+      </div>
+    </div>
+    <!-- Web Design -->
+    <div class="skill-card reveal">
+      <div class="skill-card-icon">⌨</div>
+      <p class="skill-card-title">Web Design</p>
+      <div class="skill-tags">
+        <span class="skill-tag">HTML</span>
+        <span class="skill-tag">CSS</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">MySQL</span>
+      </div>
+    </div>
+    <!-- Editing & Animation -->
+    <div class="skill-card reveal">
+      <div class="skill-card-icon">◈</div>
+      <p class="skill-card-title">Editing &amp; Animation</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Adobe Premiere Pro</span>
+        <span class="skill-tag">After Effects</span>
+        <span class="skill-tag">3D Maya</span>
+        <span class="skill-tag">2D Animation</span>
+      </div>
+    </div>
+    <!-- Professional Skills -->
+    <div class="skill-card reveal">
+      <div class="skill-card-icon">◎</div>
+      <p class="skill-card-title">Professional Skills</p>
+      <div class="skill-tags">
+        <span class="skill-tag">UX Research</span>
+        <span class="skill-tag">UI/UX Design</span>
+        <span class="skill-tag">Wireframing</span>
+        <span class="skill-tag">Prototyping</span>
+        <span class="skill-tag">AI Content Writing</span>
+        <span class="skill-tag">Presentations</span>
+      </div>
+    </div>
+    <!-- Soft Skills -->
+    <div class="skill-card reveal">
+      <div class="skill-card-icon">❋</div>
+      <p class="skill-card-title">Soft Skills</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Creativity</span>
+        <span class="skill-tag">Leadership</span>
+        <span class="skill-tag">Problem Solving</span>
+        <span class="skill-tag">Time Management</span>
+        <span class="skill-tag">Work Ethic</span>
+        <span class="skill-tag">Quick Learning</span>
+      </div>
+    </div>
+    <!-- Languages -->
+    <div class="skill-card reveal">
+      <div class="skill-card-icon">◉</div>
+      <p class="skill-card-title">Languages</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Tamil (Native)</span>
+        <span class="skill-tag">English (Fluent)</span>
+        <span class="skill-tag">French (Learning)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Proficiency bars -->
+  <div class="proficiency-section reveal">
+    <p class="prof-label">Design Tool Proficiency</p>
+    <div class="prof-grid">
+      <div class="prof-item">
+        <div class="prof-name-row"><span class="prof-name">Figma</span><span class="prof-pct">90%</span></div>
+        <div class="prof-bar"><div class="prof-fill" style="width:90%"></div></div>
+      </div>
+      <div class="prof-item">
+        <div class="prof-name-row"><span class="prof-name">Adobe Illustrator</span><span class="prof-pct">80%</span></div>
+        <div class="prof-bar"><div class="prof-fill" style="width:80%"></div></div>
+      </div>
+      <div class="prof-item">
+        <div class="prof-name-row"><span class="prof-name">Adobe XD</span><span class="prof-pct">85%</span></div>
+        <div class="prof-bar"><div class="prof-fill" style="width:85%"></div></div>
+      </div>
+      <div class="prof-item">
+        <div class="prof-name-row"><span class="prof-name">Adobe Photoshop</span><span class="prof-pct">75%</span></div>
+        <div class="prof-bar"><div class="prof-fill" style="width:75%"></div></div>
+      </div>
+      <div class="prof-item">
+        <div class="prof-name-row"><span class="prof-name">Canva</span><span class="prof-pct">95%</span></div>
+        <div class="prof-bar"><div class="prof-fill" style="width:95%"></div></div>
+      </div>
+      <div class="prof-item">
+        <div class="prof-name-row"><span class="prof-name">Premiere Pro / After Effects</span><span class="prof-pct">70%</span></div>
+        <div class="prof-bar"><div class="prof-fill" style="width:70%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="page-divider"></div>
+
+<!-- ══════════════════════════════════════
+     PAGE 3 — PROJECTS
+══════════════════════════════════════ -->
+<section id="page3">
+  <div class="page-header reveal">
+    <p class="page-number">03 — Featured Work</p>
+    <h2 class="page-title">Design <em>Projects</em></h2>
+    <p class="page-subtitle">Figma · Adobe XD · Prototyping · Wireframes</p>
+  </div>
+
+  <div class="projects-grid">
+
+    <!-- PROJECT 1: SAMOSA WEBSITE (Figma Prototype) -->
+    <div class="project-card reveal">
+      <div class="project-preview">
+        <div class="project-preview-placeholder">
+          <div class="preview-icon">✦</div>
+          <p class="preview-tool">Figma — Prototype</p>
+          <p style="font-size:12px;color:#8FA3C8;text-align:center;padding:0 12px;">Samosa Street Food Website<br>Click to explore</p>
+        </div>
+        <div class="project-overlay">
+          <a href="https://www.figma.com/design/m09wrm5BaJQM1qR0ajfzlO/Untitled?node-id=5-232&t=qDoFaYrMhLn9EdMO-1" target="_blank">Open in Figma</a>
+        </div>
+      </div>
+      <div class="project-body">
+        <p class="project-year">2026</p>
+        <h3 class="project-title">Samosa Street Food Website</h3>
+        <p class="project-desc">
+          A specially designed website celebrating India's beloved street food — Samosa. Showcases different samosa varieties, vendor locations across India, and business profiles. Designed to reduce manual errors and provide a polished digital presence for local food entrepreneurs.
+        </p>
+        <div class="project-tools">
+          <span class="project-tool-tag">Figma</span>
+          <span class="project-tool-tag">Prototype</span>
+          <span class="project-tool-tag">UX Research</span>
+          <span class="project-tool-tag">UI Design</span>
+        </div>
+        <a class="project-link" href="https://www.figma.com/design/m09wrm5BaJQM1qR0ajfzlO/Untitled?node-id=5-232&t=qDoFaYrMhLn9EdMO-1" target="_blank">View Prototype →</a>
+      </div>
+    </div>
+
+    <!-- PROJECT 2: COFFEE COCO WEBSITE -->
+    <div class="project-card reveal">
+      <div class="project-preview">
+        <div class="project-preview-placeholder">
+          <div class="preview-icon">◈</div>
+          <p class="preview-tool">Figma — Animation &amp; Prototype</p>
+          <p style="font-size:12px;color:#8FA3C8;text-align:center;padding:0 12px;">Coffee Coco Bean Website<br>Click to explore</p>
+        </div>
+        <div class="project-overlay">
+          <a href="https://www.figma.com/proto/GCVERMk6jpR4WVAvKa1eUk/Coffee-website?node-id=1-188&starting-point-node-id=1%3A188&t=QR41FpZ58QGbkH47-1" target="_blank">Open in Figma</a>
+        </div>
+      </div>
+      <div class="project-body">
+        <p class="project-year">2024</p>
+        <h3 class="project-title">Coco Coffee Bean Website</h3>
+        <p class="project-desc">
+          An animated and interactive coffee website designed for a specialized international audience. Features beautiful motion transitions, a wide variety of coffee selections tailored per country, and an immersive prototype experience that brings the brand to life.
+        </p>
+        <div class="project-tools">
+          <span class="project-tool-tag">Figma</span>
+          <span class="project-tool-tag">Animation</span>
+          <span class="project-tool-tag">Prototype</span>
+          <span class="project-tool-tag">UI Design</span>
+        </div>
+        <a class="project-link" href="https://www.figma.com/proto/GCVERMk6jpR4WVAvKa1eUk/Coffee-website?node-id=1-188&starting-point-node-id=1%3A188&t=QR41FpZ58QGbkH47-1" target="_blank">View Animation →</a>
+      </div>
+    </div>
+
+    <!-- PROJECT 3: WIREFRAME / WHATSAPP -->
+    <div class="project-card reveal">
+      <div class="project-preview">
+        <div class="project-preview-placeholder">
+          <div class="preview-icon">◉</div>
+          <p class="preview-tool">Figma — Wireframe</p>
+          <p style="font-size:12px;color:#8FA3C8;text-align:center;padding:0 12px;">Wireframe &amp; WhatsApp UI<br>Click to explore</p>
+        </div>
+        <div class="project-overlay">
+          <a href="https://www.figma.com/design/Wmzdivft5e3gh7Tu3XnfAz/Untitled?node-id=1-4&t=hXThwpQOVYJ7Q8wX-1" target="_blank">Open in Figma</a>
+        </div>
+      </div>
+      <div class="project-body">
+        <p class="project-year">2025</p>
+        <h3 class="project-title">Wireframe &amp; WhatsApp UI Design</h3>
+        <p class="project-desc">
+          A detailed wireframe and UI redesign project exploring foundational UX principles. Demonstrates proficiency in structuring user flows, information architecture, and creating clean, intuitive interface layouts using industry-standard wireframing techniques.
+        </p>
+        <div class="project-tools">
+          <span class="project-tool-tag">Figma</span>
+          <span class="project-tool-tag">Wireframing</span>
+          <span class="project-tool-tag">UX Design</span>
+          <span class="project-tool-tag">UI Layout</span>
+        </div>
+        <a class="project-link" href="https://www.figma.com/design/Wmzdivft5e3gh7Tu3XnfAz/Untitled?node-id=1-4&t=hXThwpQOVYJ7Q8wX-1" target="_blank">View Wireframes →</a>
+      </div>
+    </div>
+
+    <!-- PROJECT 4: QUIZ APP (XD) -->
+    <div class="project-card reveal" style="grid-column: span 1;">
+      <div class="project-preview">
+        <div class="project-preview-placeholder">
+          <div class="preview-icon">❋</div>
+          <p class="preview-tool">Adobe XD — App Design</p>
+          <p style="font-size:12px;color:#8FA3C8;text-align:center;padding:0 12px;">Quiz Application UI</p>
+        </div>
+        <div class="project-overlay" style="opacity:0.01;">
+        </div>
+      </div>
+      <div class="project-body">
+        <p class="project-year">2025</p>
+        <h3 class="project-title">Quiz App — Adobe XD</h3>
+        <p class="project-desc">
+          Designed a fully interactive quiz application in Adobe XD with a clean prototype and structured framework. Supports separate course categories and was engineered to minimize prototyping errors, demonstrating strong command of XD's component and interaction systems.
+        </p>
+        <div class="project-tools">
+          <span class="project-tool-tag">Adobe XD</span>
+          <span class="project-tool-tag">App Design</span>
+          <span class="project-tool-tag">Prototype</span>
+          <span class="project-tool-tag">UX Flow</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="page-divider"></div>
+
+<!-- ══════════════════════════════════════
+     PAGE 4 — PROFILES & WORK
+══════════════════════════════════════ -->
+<section id="page4">
+  <div class="page-header reveal">
+    <p class="page-number">04 — Creative Presence</p>
+    <h2 class="page-title">Published <em>Work</em></h2>
+    <p class="page-subtitle">LinkedIn · Behance · GitHub · YouTube</p>
+  </div>
+
+  <p class="work-intro reveal">
+    My design work is actively published across professional platforms. Explore my Behance for curated design case studies and posters, LinkedIn for professional updates, and GitHub for web development projects. My YouTube channel shares creative process videos and design explorations.
+  </p>
+
+  <div class="profiles-grid">
+    <div class="profile-card reveal">
+      <p class="profile-platform">LinkedIn</p>
+      <p class="profile-handle">Pavithra Sankar</p>
+      <p class="profile-desc">Professional profile featuring design projects, academic achievements, and career updates. Actively posting about UI/UX work and design insights.</p>
+      <a class="profile-link" href="https://www.linkedin.com/in/pavithra-sankar-b760a03a6/" target="_blank">View LinkedIn →</a>
+    </div>
+    <div class="profile-card reveal">
+      <p class="profile-platform">Behance</p>
+      <p class="profile-handle">pavithrasankar4</p>
+      <p class="profile-desc">Portfolio of curated design case studies, posters, and creative work — showcasing Figma designs, graphic design posters, and branding projects.</p>
+      <a class="profile-link" href="https://www.behance.net/pavithrasankar4" target="_blank">View Behance →</a>
+    </div>
+    <div class="profile-card reveal">
+      <p class="profile-platform">GitHub</p>
+      <p class="profile-handle">ProfessionalPavithra2005</p>
+      <p class="profile-desc">Repository of web design projects and code experiments including HTML/CSS/JS implementations and database-driven web applications.</p>
+      <a class="profile-link" href="https://github.com/ProfessionalPavithra2005" target="_blank">View GitHub →</a>
+    </div>
+    <div class="profile-card reveal">
+      <p class="profile-platform">YouTube</p>
+      <p class="profile-handle">HAS INFINITY Pavithra Sankar</p>
+      <p class="profile-desc">Creative channel featuring design process videos, editing tutorials, and project walkthroughs — a window into the design workflow.</p>
+      <a class="profile-link" href="https://www.youtube.com/@HASINFINITYPavithraSankar2025" target="_blank">View Channel →</a>
+    </div>
+  </div>
+
+  <!-- Behance / LinkedIn Poster Highlight -->
+  <div class="behance-highlight reveal">
+    <div>
+      <p class="bh-label">Design Posters &amp; Published Work</p>
+      <h3 class="bh-title">Featured on<br>Behance &amp; LinkedIn</h3>
+      <p class="bh-desc">
+        Design posters and creative graphics are published on both LinkedIn and Behance. Each piece reflects a focused design process — from ideation and sketching through to final polished output in Figma or Illustrator. Visit the Behance profile to view the full collection of published design work.
+      </p>
+      <a class="profile-link" href="https://www.behance.net/pavithrasankar4" target="_blank">Explore on Behance →</a>
+    </div>
+    <div class="bh-image-block">
+      <div style="font-size:36px;color:#C8A96E;">Be</div>
+      <p>Design posters &amp; project case studies<br>published on Behance &amp; LinkedIn.<br>Click "Explore on Behance" to view live.</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-name">Pavithra Sankar — UI/UX Designer</p>
+  <p class="footer-right">Puducherry, India &nbsp;·&nbsp; MCA Student &nbsp;·&nbsp; Open to Internship Opportunities</p>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
